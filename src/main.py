@@ -26,10 +26,22 @@ def fibonacci(n: int):
 def count_ones(n: int):
     if not isinstance(n,int):raise TypeError
 
-    if n > 10:
-        return n % 10
-    else:
-        return 0
+    array = []
+    string = ''
+
+    while n >= 2:
+        array.append(n%2)
+        array.append(n//2)
+        n = n // 2
+
+    for i in range(len(array)-1,-1,-1):
+        string = string + str(array[i])
+
+    return string
+
+
+
+
 
 
 
